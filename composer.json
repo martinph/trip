@@ -1,0 +1,23 @@
+{
+    "name": "martinph/trip",
+    "description": "Fault tolerance library",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Hughes",
+            "email": "martinph01@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": { "Choccybiccy\\Trip\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Choccybiccy\\Trip\\": "tests/" }
+    }
+}
