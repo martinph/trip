@@ -20,7 +20,10 @@ class MemcachedStorage implements StorageInterface
     public function __construct($servers = [])
     {
         $memcached = new \Memcached;
-        foreach($servers as $server) {
+        foreach ($servers as $server) {
+            if (!is_array($server)) {
+                $server = array($server);
+            }
             $memcached->addServer($server[0], array_key_exists(1, $server) ? $server[1] : 11211);
         }
         $this->memcached = $memcached;
@@ -29,9 +32,9 @@ class MemcachedStorage implements StorageInterface
     /**
      * {@inheritdoc}
      */
-    public function set($key, $value)
+    public function set($key, $value, $expiration = null)
     {
-        $this->memcached->set($key, $value);
+        $this->memcached->set($key, $value, $expiration);
     }
 
     /**

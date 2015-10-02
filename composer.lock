@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2079d5ed8aa90971477cfdbc4674d93a",
-    "packages": [],
+    "hash": "c6cb806f9d9ae995fc8731abbdd6ee40",
+    "content-hash": "52dc69223ac5c6cb06b06f67a31b75fa",
+    "packages": [
+        {
+            "name": "aura/di",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Di.git",
+                "reference": "c0d51c15e105c4b6df90d4c29d9e4dac6bee4d5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Di/zipball/c0d51c15e105c4b6df90d4c29d9e4dac6bee4d5b",
+                "reference": "c0d51c15e105c4b6df90d4c29d9e4dac6bee4d5b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Di\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Di Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Di/contributors"
+                }
+            ],
+            "description": "Provides a dependency injection container system with native support for constructor- and setter-based injection, lazy-loading of services, and inheritable configuration of setters and constructor params.",
+            "homepage": "https://github.com/auraphp/Aura.Di",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "dependency injection container",
+                "di",
+                "di container"
+            ],
+            "time": "2015-05-31 20:45:07"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",

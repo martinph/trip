@@ -13,7 +13,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "aura/di": "^2.2"
+    },
     "autoload": {
         "psr-4": { "Choccybiccy\\Trip\\": "src/" }
     },

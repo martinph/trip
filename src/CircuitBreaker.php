@@ -25,13 +25,20 @@ class CircuitBreaker
     protected $storage;
 
     /**
+     * @var int
+     */
+    protected $storageExpiration;
+
+    /**
      * @param string $commandKey
      * @param StorageInterface $storage
+     * @param int|null $storageExpiration
      */
-    public function __construct($commandKey, StorageInterface $storage)
+    public function __construct($commandKey, StorageInterface $storage, $storageExpiration = null)
     {
         $this->commandKey = $commandKey;
         $this->storage = $storage;
+        $this->storageExpiration = $storageExpiration;
     }
 
     /**
@@ -39,7 +46,7 @@ class CircuitBreaker
      */
     public function open()
     {
-        $this->getStorage()->set($this->storageKey(), self::OPEN_KEY);
+        $this->getStorage()->set($this->storageKey(), self::OPEN_KEY, $this->storageExpiration);
     }
 
     /**
@@ -47,7 +54,7 @@ class CircuitBreaker
      */
     public function close()
     {
-        $this->getStorage()->set($this->storageKey(), self::CLOSED_KEY);
+        $this->getStorage()->set($this->storageKey(), self::CLOSED_KEY, $this->storageExpiration);
     }
 
     /**
@@ -81,8 +88,8 @@ class CircuitBreaker
      *
      * @return string
      */
-    protected function storageKey()
+    public function storageKey()
     {
-        return $this->commandKey . "_CircuitBreaker";
+        return $this->getCommandKey() . "_CircuitBreaker";
     }
 }

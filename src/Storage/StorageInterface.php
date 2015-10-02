@@ -10,14 +10,15 @@ interface StorageInterface
 {
 
     /**
-     * @param string $key
-     * @param mixed $value
+     * @param string $key Storage key
+     * @param mixed $value Value
+     * @param int|null $expiration Expiration in seconds
      * @return $this
      */
-    public function set($key, $value);
+    public function set($key, $value, $expiration = null);
 
     /**
-     * @param string $key
+     * @param string $key Storage key
      * @return mixed
      */
     public function get($key);
